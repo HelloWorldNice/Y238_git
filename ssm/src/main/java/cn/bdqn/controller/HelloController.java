@@ -44,6 +44,16 @@ public class AccountController {
         return map;
     }
 
+	@GetMapping(value = "/newCode")
+    public ModelAndView newCode(
+            @RequestParam(name = "pageNum",required = false,defaultValue = "1")
+                    Integer currentPage){
+
+		// 修改了源代码
+
+        return mv;
+    }
+
     @GetMapping(value = "/queryAllByPage")
     public ModelAndView queryAllByPage(
             @RequestParam(name = "pageNum",required = false,defaultValue = "1")
