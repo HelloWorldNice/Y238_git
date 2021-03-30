@@ -50,8 +50,17 @@ public class AccountController {
                     Integer currentPage){
 
         PageInfo<Account> pageInfo = accountService.queryAllByPage(currentPage,5);
+	
+		return mv;
+	}
+	
+	// 鲍庆勇的代码
+	@GetMapping(value = "/newCode")
+    public ModelAndView newCode(
+            @RequestParam(name = "pageNum",required = false,defaultValue = "1")
+                    Integer currentPage){
 
-		// 鲍庆勇的代码
+		// 修改了源代码
 
         return mv;
     }
