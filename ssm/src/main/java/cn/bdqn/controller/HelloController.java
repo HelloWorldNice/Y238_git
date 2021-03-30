@@ -44,6 +44,18 @@ public class AccountController {
         return map;
     }
 
+	@GetMapping(value = "/baoqingyong")
+    public ModelAndView baoqingyong(
+            @RequestParam(name = "pageNum",required = false,defaultValue = "1")
+                    Integer currentPage){
+
+        PageInfo<Account> pageInfo = accountService.queryAllByPage(currentPage,5);
+
+		// 鲍庆勇的代码
+
+        return mv;
+    }
+
     @GetMapping(value = "/queryAllByPage")
     public ModelAndView queryAllByPage(
             @RequestParam(name = "pageNum",required = false,defaultValue = "1")
